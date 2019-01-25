@@ -16,14 +16,15 @@ public class check_login {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("localhost:3001");
+		driver.get("localhost:8000/content/home.php");
 	}
   @Test
   public void checklogin() {
 	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	  driver.findElement(By.name("login")).sendKeys("kamala");
-	  driver.findElement(By.name("password")).sendKeys("password");
-	  driver.findElement(By.name("click")).click();  
+	  //driver.findElement(By.name("login")).sendKeys("kamala");
+	  //driver.findElement(By.name("password")).sendKeys("password");
+	  //driver.findElement(By.name("click")).click();
+	  driver.getPageSource().contains("Feel free to edit it");
   }
   @AfterMethod
   public void close(){
