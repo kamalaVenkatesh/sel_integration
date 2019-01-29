@@ -16,7 +16,8 @@ public class check_login {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("localhost:8000/content/home.php");
+	    //driver.get("localhost:8000/content/home.php");
+		driver.get("localhost");
 	}
   @Test
   public void checklogin() {
@@ -24,7 +25,8 @@ public class check_login {
 	  //driver.findElement(By.name("login")).sendKeys("kamala");
 	  //driver.findElement(By.name("password")).sendKeys("password");
 	  //driver.findElement(By.name("click")).click();
-	  driver.getPageSource().contains("Feel free to edit it");
+	  //driver.getPageSource().contains("Feel free to edit it");
+	  driver.getPageSource().contains("Apache");
   }
   @AfterMethod
   public void close(){
